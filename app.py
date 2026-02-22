@@ -18,7 +18,7 @@ def login():
     if username == "user" and password == "1234":
         return redirect("/home")
     else:
-        return "Invalid Login"
+        return "Invalid Login "
 
 # SYMPTOM PAGE
 @app.route('/home')
