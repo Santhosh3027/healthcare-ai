@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect
 from model import predict_disease
+import os  # Add this import
 
 app = Flask(__name__)
 
@@ -38,4 +39,5 @@ def predict():
     )
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Get PORT from environment
+    app.run(host='0.0.0.0', port=port, debug=False)  # Bind to all interfaces
